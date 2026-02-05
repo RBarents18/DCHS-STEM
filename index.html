@@ -5,143 +5,388 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desert Christian STEM Program</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <span class="contact-quick">📞 (520) 329-5403</span>
+            <span class="contact-quick">📧 stem@desertchristian.org</span>
+            <div class="social-links">
+                <a href="#" aria-label="Facebook">📘</a>
+                <a href="#" aria-label="Instagram">📷</a>
+                <a href="#" aria-label="YouTube">▶️</a>
+            </div>
+        </div>
+    </div>
+
     <header>
         <nav>
             <div class="logo">
-                <h1>Desert Christian STEM</h1>
+                <div class="logo-icon">✝️🏜️</div>
+                <div class="logo-text">
+                    <h1>Desert Christian</h1>
+                    <span class="logo-subtitle">STEM Program</span>
+                </div>
             </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">☰</button>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="engineering-102.html">Engineering 102</a></li>
                 <li><a href="#events">Events</a></li>
+                <li class="nav-dropdown">
+                    <a href="#about">About Us <span class="dropdown-arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#about">Our Mission</a></li>
+                        <li><a href="#about">Faculty & Staff</a></li>
+                        <li><a href="#about">Faith Integration</a></li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="#projects">Academics <span class="dropdown-arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#projects">STEM Curriculum</a></li>
+                        <li><a href="#projects">Robotics</a></li>
+                        <li><a href="#projects">Coding Club</a></li>
+                        <li><a href="#projects">Engineering</a></li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="#events">Student Life <span class="dropdown-arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#events">Events</a></li>
+                        <li><a href="#events">Competitions</a></li>
+                        <li><a href="#events">Workshops</a></li>
+                    </ul>
+                </li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <div class="nav-actions">
+                <a href="#contact" class="btn-inquire">Inquire</a>
+                <a href="https://www.desertchristian.org/" target="_blank" class="btn-apply">Visit DCS</a>
+            </div>
         </nav>
     </header>
 
     <main>
         <section id="home" class="hero">
+            <div class="hero-overlay"></div>
             <div class="hero-content">
-                <h2>Desert Christian STEM Program</h2>
-                <p>Inspiring excellence in Science, Technology, Engineering, and Mathematics</p>
-                <p class="verse">"For I know the plans I have for you," declares the Lord, "plans to prosper you and not to harm you, plans to give you hope and a future." - Jeremiah 29:11</p>
-                <button class="cta-button">Explore Our Program</button>
+                <span class="hero-tagline">Faith-Based STEM Excellence</span>
+                <h2>Discover God's Design Through Innovation</h2>
+                <p>Empowering students to explore Science, Technology, Engineering, and Mathematics while strengthening their faith</p>
+                <div class="hero-actions">
+                    <a href="#contact" class="cta-button primary">Inquire Now</a>
+                    <a href="#about" class="cta-button secondary">Schedule a Visit</a>
+                    <a href="https://www.desertchristian.org/" target="_blank" class="cta-button outline">Apply Today</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- School Stats Section -->
+        <section class="school-stats">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">1985</span>
+                    <span class="stat-label">Year Founded</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">12:1</span>
+                    <span class="stat-label">Student-Teacher Ratio</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">3</span>
+                    <span class="stat-label">Campuses</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Faith-Integrated</span>
+                </div>
             </div>
         </section>
 
         <section id="about">
-            <h2>About Our STEM Program</h2>
+            <div class="section-header">
+                <span class="section-tag">Who We Are</span>
+                <h2>About Our STEM Program</h2>
+                <div class="section-underline"></div>
+            </div>
             <p class="section-intro">At Desert Christian Schools, our STEM program integrates faith and learning, empowering students to discover God's design through hands-on exploration in science, technology, engineering, and mathematics.</p>
+            
+            <div class="verse-highlight">
+                <p>"For I know the plans I have for you," declares the Lord, "plans to prosper you and not to harm you, plans to give you hope and a future."</p>
+                <span class="verse-ref">— Jeremiah 29:11</span>
+            </div>
             
             <div class="features">
                 <div class="feature-card">
-                    <div class="icon">🔬</div>
+                    <div class="feature-icon">🔬</div>
                     <h3>Science</h3>
                     <p>Explore God's creation through scientific inquiry, experiments, and research that reveal the wonder of the natural world.</p>
+                    <a href="#projects" class="feature-link">Learn More →</a>
                 </div>
                 <div class="feature-card">
-                    <div class="icon">💻</div>
+                    <div class="feature-icon">💻</div>
                     <h3>Technology</h3>
                     <p>Learn coding, robotics, and digital innovation to use technology as a tool for positive impact and service.</p>
+                    <a href="#projects" class="feature-link">Learn More →</a>
                 </div>
                 <div class="feature-card">
-                    <div class="icon">⚙️</div>
+                    <div class="feature-icon">⚙️</div>
                     <h3>Engineering</h3>
                     <p>Design and build creative solutions to real-world problems, developing critical thinking and problem-solving skills.</p>
+                    <a href="#projects" class="feature-link">Learn More →</a>
                 </div>
                 <div class="feature-card">
-                    <div class="icon">📊</div>
+                    <div class="feature-icon">📊</div>
                     <h3>Mathematics</h3>
                     <p>Apply mathematical reasoning to solve complex challenges and discover the precision in God's design.</p>
+                    <a href="#projects" class="feature-link">Learn More →</a>
                 </div>
             </div>
         </section>
 
         <section id="projects">
-            <h2>Our Projects & Activities</h2>
+            <div class="section-header">
+                <span class="section-tag">Academics</span>
+                <h2>Our Projects & Activities</h2>
+                <div class="section-underline"></div>
+            </div>
             <div class="projects-grid">
                 <div class="project-card">
-                    <h3>Robotics Team</h3>
-                    <p>Students design, build, and program robots for competitive challenges, developing teamwork and engineering skills.</p>
+                    <div class="project-image">🤖</div>
+                    <div class="project-content">
+                        <h3>Robotics Team</h3>
+                        <p>Students design, build, and program robots for competitive challenges, developing teamwork and engineering skills.</p>
+                        <a href="#contact" class="project-link">Get Involved →</a>
+                    </div>
                 </div>
                 <div class="project-card">
-                    <h3>Science Fair</h3>
-                    <p>Annual showcase of student research, experiments, and innovation across all scientific disciplines.</p>
+                    <div class="project-image">🧪</div>
+                    <div class="project-content">
+                        <h3>Science Fair</h3>
+                        <p>Annual showcase of student research, experiments, and innovation across all scientific disciplines.</p>
+                        <a href="#contact" class="project-link">Get Involved →</a>
+                    </div>
                 </div>
                 <div class="project-card">
-                    <h3>Coding Club</h3>
-                    <p>Weekly sessions learning programming languages, app development, and computational thinking.</p>
+                    <div class="project-image">👨‍💻</div>
+                    <div class="project-content">
+                        <h3>Coding Club</h3>
+                        <p>Weekly sessions learning programming languages, app development, and computational thinking.</p>
+                        <a href="#contact" class="project-link">Get Involved →</a>
+                    </div>
                 </div>
                 <div class="project-card">
-                    <h3>Engineering Design</h3>
-                    <p>Hands-on projects using the engineering design process to create solutions for real-world problems.</p>
+                    <div class="project-image">🛠️</div>
+                    <div class="project-content">
+                        <h3>Engineering Design</h3>
+                        <p>Hands-on projects using the engineering design process to create solutions for real-world problems.</p>
+                        <a href="#contact" class="project-link">Get Involved →</a>
+                    </div>
                 </div>
                 <div class="project-card">
-                    <h3>Math Competitions</h3>
-                    <p>Participate in regional and national mathematics competitions to challenge and inspire young mathematicians.</p>
+                    <div class="project-image">📐</div>
+                    <div class="project-content">
+                        <h3>Math Competitions</h3>
+                        <p>Participate in regional and national mathematics competitions to challenge and inspire young mathematicians.</p>
+                        <a href="#contact" class="project-link">Get Involved →</a>
+                    </div>
                 </div>
                 <div class="project-card">
-                    <h3>STEM Workshops</h3>
-                    <p>Interactive workshops featuring guest speakers, field trips, and hands-on learning experiences.</p>
+                    <div class="project-image">🎓</div>
+                    <div class="project-content">
+                        <h3>STEM Workshops</h3>
+                        <p>Interactive workshops featuring guest speakers, field trips, and hands-on learning experiences.</p>
+                        <a href="#contact" class="project-link">Get Involved →</a>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="events">
-            <h2>Upcoming Events</h2>
+            <div class="section-header">
+                <span class="section-tag">Student Life</span>
+                <h2>Upcoming Events</h2>
+                <div class="section-underline"></div>
+            </div>
             <div class="events-container">
                 <div class="event-card">
                     <div class="event-date">
                         <span class="month">MAR</span>
                         <span class="day">15</span>
+                        <span class="year">2026</span>
                     </div>
                     <div class="event-details">
+                        <span class="event-category">Competition</span>
                         <h3>Regional Robotics Competition</h3>
                         <p>Our robotics team competes in the regional championship</p>
+                        <a href="#contact" class="event-link">Register →</a>
                     </div>
                 </div>
                 <div class="event-card">
                     <div class="event-date">
                         <span class="month">APR</span>
                         <span class="day">10</span>
+                        <span class="year">2026</span>
                     </div>
                     <div class="event-details">
+                        <span class="event-category">Career</span>
                         <h3>STEM Career Day</h3>
                         <p>Meet professionals from various STEM fields and explore career pathways</p>
+                        <a href="#contact" class="event-link">Register →</a>
                     </div>
                 </div>
                 <div class="event-card">
                     <div class="event-date">
                         <span class="month">MAY</span>
                         <span class="day">5</span>
+                        <span class="year">2026</span>
                     </div>
                     <div class="event-details">
+                        <span class="event-category">Showcase</span>
                         <h3>Annual Science Fair</h3>
                         <p>Showcase of student research and innovation projects</p>
+                        <a href="#contact" class="event-link">Register →</a>
                     </div>
                 </div>
+            </div>
+            <div class="events-cta">
+                <a href="#contact" class="cta-button primary">View All Events</a>
             </div>
         </section>
 
         <section id="contact">
-            <h2>Get Involved</h2>
-            <div class="contact-content">
-                <p>Interested in joining our STEM program or learning more about our activities?</p>
-                <p class="contact-info">📧 Email: stem@desertchristian.org</p>
-                <p class="contact-info">📍 Visit: <a href="https://www.desertchristian.org/" target="_blank">Desert Christian Schools</a></p>
-                <button class="cta-button secondary">Contact Us</button>
+            <div class="section-header light">
+                <span class="section-tag">Get In Touch</span>
+                <h2>Get Involved</h2>
+                <div class="section-underline light"></div>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info-block">
+                    <h3>Contact Information</h3>
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <div>
+                            <strong>Address</strong>
+                            <p>7525 N Thornydale Rd, Tucson, AZ 85741</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📞</span>
+                        <div>
+                            <strong>Phone</strong>
+                            <p>(520) 329-5403</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <div>
+                            <strong>Email</strong>
+                            <p>stem@desertchristian.org</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">🕐</span>
+                        <div>
+                            <strong>Office Hours</strong>
+                            <p>Mon-Fri: 8:00 AM - 4:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-block">
+                    <h3>Send Us a Message</h3>
+                    <form class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" placeholder="Your name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" name="subject">
+                                <option value="">Select a topic</option>
+                                <option value="inquiry">General Inquiry</option>
+                                <option value="robotics">Robotics Team</option>
+                                <option value="coding">Coding Club</option>
+                                <option value="events">Events</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="4" placeholder="How can we help you?" required></textarea>
+                        </div>
+                        <button type="submit" class="cta-button primary">Send Message</button>
+                    </form>
+                </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <div class="footer-content">
-            <p>&copy; 2026 Desert Christian Schools STEM Program</p>
-            <p>Empowering students to use their God-given talents in STEM fields</p>
+        <div class="footer-main">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <div class="logo-icon">✝️🏜️</div>
+                        <div class="logo-text">
+                            <h3>Desert Christian</h3>
+                            <span>STEM Program</span>
+                        </div>
+                    </div>
+                    <p>Empowering students to discover God's design through hands-on exploration in science, technology, engineering, and mathematics.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="YouTube">▶️</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                    </div>
+                </div>
+                <div class="footer-links-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#projects">Academics</a></li>
+                        <li><a href="#events">Student Life</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-section">
+                    <h4>Programs</h4>
+                    <ul>
+                        <li><a href="#projects">Robotics Team</a></li>
+                        <li><a href="#projects">Coding Club</a></li>
+                        <li><a href="#projects">Science Fair</a></li>
+                        <li><a href="#projects">Math Competition</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="https://www.desertchristian.org/" target="_blank">Main DCS Website</a></li>
+                        <li><a href="#events">Event Calendar</a></li>
+                        <li><a href="#contact">Faculty Directory</a></li>
+                        <li><a href="#contact">Parent Portal</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p>&copy; 2026 Desert Christian Schools STEM Program. All rights reserved.</p>
+                <p class="footer-tagline">Using God-given talents to glorify Him through STEM</p>
+            </div>
         </div>
     </footer>
 
