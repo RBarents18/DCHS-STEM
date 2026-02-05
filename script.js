@@ -111,11 +111,46 @@ if (contactForm) {
         
         // Simple validation
         if (name && email && message) {
-            // Show success message (in a real app, this would send to a server)
-            alert('Thank you for your message! We will get back to you soon.');
+            // Show accessible success message
+            showFormMessage('Thank you for your message! We will get back to you soon.', 'success');
             contactForm.reset();
         }
     });
+}
+
+// Accessible form message function
+function showFormMessage(text, type) {
+    // Remove any existing message
+    const existingMessage = document.querySelector('.form-message');
+    if (existingMessage) {
+        existingMessage.remove();
+    }
+    
+    // Create message element
+    const messageEl = document.createElement('div');
+    messageEl.className = `form-message form-message-${type}`;
+    messageEl.setAttribute('role', 'status');
+    messageEl.setAttribute('aria-live', 'polite');
+    messageEl.innerHTML = `
+        <span class="form-message-text">${text}</span>
+        <button class="form-message-close" aria-label="Close message">&times;</button>
+    `;
+    
+    // Insert message before the form
+    const contactForm = document.querySelector('.contact-form');
+    contactForm.parentNode.insertBefore(messageEl, contactForm);
+    
+    // Close button handler
+    messageEl.querySelector('.form-message-close').addEventListener('click', () => {
+        messageEl.remove();
+    });
+    
+    // Auto-remove after 5 seconds
+    setTimeout(() => {
+        if (messageEl.parentNode) {
+            messageEl.remove();
+        }
+    }, 5000);
 }
 
 // Animate elements on scroll

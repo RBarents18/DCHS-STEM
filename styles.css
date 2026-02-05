@@ -305,7 +305,7 @@ nav {
 
 .hero-tagline {
     display: inline-block;
-    background: rgba(212, 168, 75, 0.9);
+    background: var(--gold);
     color: var(--white);
     padding: 0.5rem 1.5rem;
     border-radius: 50px;
@@ -860,6 +860,53 @@ h2 {
 .contact-form .cta-button {
     align-self: flex-start;
     margin-top: 0.5rem;
+}
+
+/* Form Message - Accessible Toast Notification */
+.form-message {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    border-radius: var(--radius-md);
+    margin-bottom: 1.5rem;
+    animation: slideIn 0.3s ease-out;
+}
+
+.form-message-success {
+    background: rgba(46, 204, 113, 0.2);
+    border: 1px solid rgba(46, 204, 113, 0.5);
+    color: var(--white);
+}
+
+.form-message-text {
+    flex: 1;
+}
+
+.form-message-close {
+    background: transparent;
+    border: none;
+    color: var(--white);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0 0.5rem;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.form-message-close:hover {
+    opacity: 1;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Footer */
