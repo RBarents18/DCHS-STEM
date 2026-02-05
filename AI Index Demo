@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School STEM Program</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>STEM Program</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <h2>Welcome to Our STEM Program</h2>
+            <p>Inspiring the next generation of scientists, technologists, engineers, and mathematicians</p>
+            <button class="cta-button">Learn More</button>
+        </section>
+
+        <section id="about">
+            <h2>About Our Program</h2>
+            <p>Our STEM program provides hands-on learning experiences in science, technology, engineering, and mathematics. We encourage creativity, problem-solving, and innovation.</p>
+            <div class="features">
+                <div class="feature-card">
+                    <h3>🔬 Science</h3>
+                    <p>Explore scientific concepts through experiments and research</p>
+                </div>
+                <div class="feature-card">
+                    <h3>💻 Technology</h3>
+                    <p>Learn coding, robotics, and digital innovation</p>
+                </div>
+                <div class="feature-card">
+                    <h3>⚙️ Engineering</h3>
+                    <p>Design and build solutions to real-world problems</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📊 Mathematics</h3>
+                    <p>Apply mathematical thinking to solve complex challenges</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Our Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Robotics Competition</h3>
+                    <p>Students design and program robots for competitive challenges</p>
+                </div>
+                <div class="project-card">
+                    <h3>Science Fair</h3>
+                    <p>Annual showcase of student research and experiments</p>
+                </div>
+                <div class="project-card">
+                    <h3>Coding Club</h3>
+                    <p>Weekly sessions learning programming languages and app development</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="events">
+            <h2>Upcoming Events</h2>
+            <ul class="events-list">
+                <li><strong>March 15, 2026</strong> - Regional Robotics Competition</li>
+                <li><strong>April 10, 2026</strong> - STEM Career Day</li>
+                <li><strong>May 5, 2026</strong> - Annual Science Fair</li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Get Involved</h2>
+            <p>Interested in joining our STEM program? Contact us!</p>
+            <p>Email: stem@yourschool.edu</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 School STEM Program. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
