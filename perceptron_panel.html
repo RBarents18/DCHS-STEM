@@ -1,0 +1,655 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Single Neuron — Perceptron Panel (2-Input)</title>
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --panel:#111824;
+      --panel2:#0f1520;
+      --wood1:#2a1a12;
+      --wood2:#1b120d;
+
+      --text:#e9eef6;
+      --muted:#9fb0c6;
+
+      --accent:#f4b547;      /* warm amber */
+      --accent2:#7cf3c2;     /* mint */
+      --danger:#ff4d4d;
+      --ok:#29d37f;
+
+      --shadow: 0 18px 40px rgba(0,0,0,.55);
+      --inset: inset 0 1px 0 rgba(255,255,255,.05), inset 0 -1px 0 rgba(0,0,0,.45);
+      --radius: 18px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      min-height:100vh;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      background:
+        radial-gradient(1200px 700px at 20% 10%, rgba(244,181,71,.18), transparent 60%),
+        radial-gradient(900px 600px at 85% 30%, rgba(124,243,194,.12), transparent 55%),
+        radial-gradient(800px 800px at 50% 100%, rgba(255,255,255,.06), transparent 55%),
+        linear-gradient(180deg, var(--bg), #070a0f);
+      padding: 28px 18px 40px;
+    }
+
+    .wrap{
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .headline{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .titleblock h1{
+      font-size: clamp(20px, 3vw, 34px);
+      margin:0;
+      letter-spacing:.5px;
+      font-weight: 800;
+    }
+    .titleblock .sub{
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.35;
+    }
+
+    .badge{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-end;
+      gap: 6px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .badge .chip{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.08);
+      box-shadow: var(--inset);
+      white-space:nowrap;
+    }
+    .dot{
+      width: 10px; height:10px; border-radius:999px;
+      background: var(--accent);
+      box-shadow: 0 0 14px rgba(244,181,71,.55);
+    }
+
+    /* Main “desk / wood” frame */
+    .desk{
+      border-radius: calc(var(--radius) + 10px);
+      padding: 18px;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.08), rgba(255,255,255,0) 40%),
+        repeating-linear-gradient(90deg, rgba(255,255,255,.035) 0 2px, rgba(255,255,255,0) 2px 10px),
+        linear-gradient(180deg, var(--wood1), var(--wood2));
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,.09);
+    }
+
+    .panel{
+      border-radius: var(--radius);
+      padding: 18px;
+      background:
+        radial-gradient(900px 500px at 0% 0%, rgba(255,255,255,.08), transparent 55%),
+        linear-gradient(180deg, var(--panel), var(--panel2));
+      border: 1px solid rgba(255,255,255,.10);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.04);
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 14px;
+    }
+
+    @media (max-width: 900px){
+      .grid{ grid-template-columns: 1fr; }
+      .badge{ align-items:flex-start; }
+      .headline{ align-items:flex-start; flex-direction:column; }
+    }
+
+    .module{
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.18);
+      box-shadow: var(--inset);
+      padding: 14px;
+      position:relative;
+      overflow:hidden;
+    }
+    .module:before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background: radial-gradient(600px 120px at 10% 0%, rgba(244,181,71,.18), transparent 55%);
+      pointer-events:none;
+      opacity:.75;
+    }
+
+    .module h2{
+      margin: 0 0 10px;
+      font-size: 13px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(233,238,246,.9);
+    }
+
+    .row{ display:flex; gap: 10px; flex-wrap:wrap; align-items:center; }
+    .stack{ display:flex; flex-direction:column; gap: 10px; }
+
+    /* Toggle switches */
+    .toggle{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,255,255,.08);
+      box-shadow: var(--inset);
+      width: 100%;
+      min-width: 200px;
+    }
+    .toggle .label{
+      display:flex;
+      flex-direction:column;
+      gap: 2px;
+    }
+    .toggle .label b{ font-size: 14px; letter-spacing:.02em; }
+    .toggle .label span{ font-size: 12px; color: var(--muted); }
+
+    .switch{
+      position:relative;
+      width: 56px; height: 32px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: inset 0 2px 6px rgba(0,0,0,.55);
+      cursor:pointer;
+      flex: 0 0 auto;
+    }
+    .switch input{ display:none; }
+    .knob{
+      position:absolute;
+      top: 4px; left: 4px;
+      width: 24px; height: 24px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, #e9eef6, #aebbd1);
+      box-shadow: 0 8px 16px rgba(0,0,0,.35);
+      transition: transform .15s ease;
+    }
+    .switch.on{
+      background: rgba(41,211,127,.22);
+      border-color: rgba(41,211,127,.35);
+    }
+    .switch.on .knob{ transform: translateX(24px); }
+    .switch.on:after{
+      content:"";
+      position:absolute;
+      inset: -1px;
+      border-radius: 999px;
+      box-shadow: 0 0 18px rgba(41,211,127,.35);
+      pointer-events:none;
+    }
+
+    /* Slider “knobs” */
+    .control{
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,255,255,.08);
+      box-shadow: var(--inset);
+      width: 100%;
+    }
+    .control .topline{
+      display:flex;
+      align-items:baseline;
+      justify-content:space-between;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+    .control .topline b{ font-size:14px; }
+    .control .topline code{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
+      color: rgba(233,238,246,.9);
+      background: rgba(0,0,0,.25);
+      border: 1px solid rgba(255,255,255,.08);
+      padding: 2px 6px;
+      border-radius: 10px;
+      font-size: 12px;
+    }
+
+    input[type="range"]{
+      width:100%;
+      accent-color: var(--accent);
+    }
+
+    .hint{
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 6px;
+      line-height: 1.35;
+    }
+
+    /* Readout */
+    .readout{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+    .screen{
+      border-radius: 16px;
+      padding: 14px;
+      background: linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.25));
+      border: 1px solid rgba(255,255,255,.10);
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,.35), 0 10px 26px rgba(0,0,0,.25);
+    }
+    .screen .big{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap: 10px;
+      flex-wrap:wrap;
+    }
+    .screen .big .z{
+      font-size: 34px;
+      font-weight: 850;
+      letter-spacing: .02em;
+    }
+    .screen .big .y{
+      font-size: 20px;
+      font-weight: 800;
+      color: rgba(233,238,246,.9);
+    }
+    .screen .eq{
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
+      line-height: 1.4;
+    }
+
+    /* LEDs */
+    .ledrow{
+      display:flex;
+      gap: 10px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+    .led{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,255,255,.08);
+      box-shadow: var(--inset);
+      min-width: 160px;
+    }
+    .lamp{
+      width: 14px; height: 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.18);
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,.35);
+    }
+    .lamp.on.ok{ background: var(--ok); box-shadow: 0 0 18px rgba(41,211,127,.55); }
+    .lamp.on.bad{ background: var(--danger); box-shadow: 0 0 18px rgba(255,77,77,.55); }
+
+    /* Meter */
+    .meter{
+      border-radius: 16px;
+      padding: 10px 12px 12px;
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,255,255,.08);
+      box-shadow: var(--inset);
+    }
+    .meter .cap{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+    .meter .cap b{ font-size: 13px; letter-spacing:.08em; text-transform: uppercase; color: rgba(233,238,246,.85); }
+    .meter .cap span{ font-size: 12px; color: var(--muted); font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace; }
+
+    .footer{
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    /* Tiny “screws” for vibe */
+    .screw{
+      position:absolute;
+      width: 10px; height: 10px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 30%, #e9eef6, #6d7b93 65%, #2a3446);
+      opacity:.55;
+      box-shadow: 0 2px 8px rgba(0,0,0,.35);
+    }
+    .s1{ top:10px; left:10px;}
+    .s2{ top:10px; right:10px;}
+    .s3{ bottom:10px; left:10px;}
+    .s4{ bottom:10px; right:10px;}
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="headline">
+      <div class="titleblock">
+        <h1>single neuron</h1>
+        <div class="sub">
+          A 2‑input perceptron panel: set <code>x₁</code>, <code>x₂</code>, <code>w₁</code>, <code>w₂</code>, and bias <code>b</code>.
+          Output is <code>ŷ = step(z)</code> where <code>z = w·x + b</code>.
+        </div>
+      </div>
+      <div class="badge">
+        <div class="chip"><span class="dot"></span> Local, no dependencies (HTML/CSS/JS)</div>
+        <div class="chip">Threshold at <code>z = 0</code> · Step activation</div>
+      </div>
+    </div>
+
+    <div class="desk">
+      <div class="panel">
+        <div class="grid">
+
+          <!-- Inputs -->
+          <section class="module" aria-label="Inputs">
+            <span class="screw s1"></span><span class="screw s2"></span><span class="screw s3"></span><span class="screw s4"></span>
+            <h2>Inputs</h2>
+
+            <div class="stack">
+              <div class="toggle">
+                <div class="label">
+                  <b>x₁</b>
+                  <span>Input 1 (0/1)</span>
+                </div>
+                <div class="switch" id="sw-x1" role="switch" aria-checked="false" tabindex="0" title="Toggle x1">
+                  <input id="x1" type="checkbox" />
+                  <div class="knob"></div>
+                </div>
+              </div>
+
+              <div class="toggle">
+                <div class="label">
+                  <b>x₂</b>
+                  <span>Input 2 (0/1)</span>
+                </div>
+                <div class="switch" id="sw-x2" role="switch" aria-checked="false" tabindex="0" title="Toggle x2">
+                  <input id="x2" type="checkbox" />
+                  <div class="knob"></div>
+                </div>
+              </div>
+
+              <div class="hint">
+                Tip: Use 0/1 inputs to emulate logic gates (AND/OR) by adjusting weights and bias.
+              </div>
+            </div>
+          </section>
+
+          <!-- Weights -->
+          <section class="module" aria-label="Weights and Bias">
+            <span class="screw s1"></span><span class="screw s2"></span><span class="screw s3"></span><span class="screw s4"></span>
+            <h2>Weights</h2>
+
+            <div class="stack">
+              <div class="control">
+                <div class="topline">
+                  <b>w₁</b>
+                  <code id="w1v">0.40</code>
+                </div>
+                <input id="w1" type="range" min="-2" max="2" step="0.05" value="0.40" />
+                <div class="hint">Range −2.00 to +2.00</div>
+              </div>
+
+              <div class="control">
+                <div class="topline">
+                  <b>w₂</b>
+                  <code id="w2v">-0.60</code>
+                </div>
+                <input id="w2" type="range" min="-2" max="2" step="0.05" value="-0.60" />
+                <div class="hint">Range −2.00 to +2.00</div>
+              </div>
+
+              <div class="control">
+                <div class="topline">
+                  <b>bias (b)</b>
+                  <code id="bv">0.10</code>
+                </div>
+                <input id="b" type="range" min="-2" max="2" step="0.05" value="0.10" />
+                <div class="hint">Moves the decision boundary left/right.</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Output -->
+          <section class="module" aria-label="Output">
+            <span class="screw s1"></span><span class="screw s2"></span><span class="screw s3"></span><span class="screw s4"></span>
+            <h2>Output</h2>
+
+            <div class="readout">
+              <div class="screen">
+                <div class="big">
+                  <div>
+                    <div style="font-size:12px; color:var(--muted); letter-spacing:.12em; text-transform:uppercase;">weighted sum</div>
+                    <div class="z"><span id="z">0.00</span></div>
+                  </div>
+                  <div style="text-align:right;">
+                    <div style="font-size:12px; color:var(--muted); letter-spacing:.12em; text-transform:uppercase;">prediction</div>
+                    <div class="y">ŷ = <span id="yhat">0</span></div>
+                  </div>
+                </div>
+
+                <div class="eq" id="equation">
+                  z = w₁·x₁ + w₂·x₂ + b
+                </div>
+              </div>
+
+              <div class="meter">
+                <div class="cap">
+                  <b>meter</b>
+                  <span>threshold at 0</span>
+                </div>
+                <svg id="meterSvg" viewBox="0 0 300 170" width="100%" height="170" aria-label="Analog meter">
+                  <!-- arc background -->
+                  <path d="M 40 140 A 110 110 0 0 1 260 140" fill="none" stroke="rgba(255,255,255,.10)" stroke-width="16" stroke-linecap="round"/>
+                  <!-- ticks -->
+                  <g id="ticks" stroke="rgba(233,238,246,.32)" stroke-width="2" stroke-linecap="round"></g>
+
+                  <!-- threshold tick at center -->
+                  <line x1="150" y1="35" x2="150" y2="60" stroke="rgba(244,181,71,.85)" stroke-width="3" />
+
+                  <!-- needle -->
+                  <g id="needle" transform="rotate(-90 150 140)">
+                    <line x1="150" y1="140" x2="150" y2="45" stroke="rgba(233,238,246,.90)" stroke-width="4" stroke-linecap="round"/>
+                    <circle cx="150" cy="140" r="9" fill="rgba(233,238,246,.9)"/>
+                    <circle cx="150" cy="140" r="4.5" fill="rgba(0,0,0,.55)"/>
+                  </g>
+
+                  <!-- labels -->
+                  <text x="40" y="158" fill="rgba(159,176,198,.85)" font-size="12" font-family="ui-monospace, monospace">-2</text>
+                  <text x="145" y="22" fill="rgba(159,176,198,.85)" font-size="12" font-family="ui-monospace, monospace">0</text>
+                  <text x="255" y="158" fill="rgba(159,176,198,.85)" font-size="12" font-family="ui-monospace, monospace">+2</text>
+                </svg>
+              </div>
+
+              <div class="ledrow">
+                <div class="led" title="Output 0 indicator">
+                  <span class="lamp bad" id="led0"></span>
+                  <div>
+                    <div style="font-weight:800;">OUTPUT = 0</div>
+                    <div style="font-size:12px; color:var(--muted);">z &lt; 0</div>
+                  </div>
+                </div>
+
+                <div class="led" title="Output 1 indicator">
+                  <span class="lamp ok" id="led1"></span>
+                  <div>
+                    <div style="font-weight:800;">OUTPUT = 1</div>
+                    <div style="font-size:12px; color:var(--muted);">z ≥ 0</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="footer">
+                Try making an <b>AND gate</b>: set <code>w₁=1</code>, <code>w₂=1</code>, <code>b=-1.5</code>.
+                Try an <b>OR gate</b>: set <code>w₁=1</code>, <code>w₂=1</code>, <code>b=-0.5</code>.
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // --- Perceptron math ---
+    function step(z){ return z >= 0 ? 1 : 0; }
+
+    // Clamp meter to [-2, +2] for display (still compute true z)
+    function clamp(v, lo, hi){ return Math.max(lo, Math.min(hi, v)); }
+
+    function fmt(n){
+      // keep it stable and readable
+      const s = (Math.round(n * 100) / 100).toFixed(2);
+      // remove -0.00
+      return (s === "-0.00") ? "0.00" : s;
+    }
+
+    // --- DOM ---
+    const x1 = document.getElementById("x1");
+    const x2 = document.getElementById("x2");
+    const swX1 = document.getElementById("sw-x1");
+    const swX2 = document.getElementById("sw-x2");
+
+    const w1 = document.getElementById("w1");
+    const w2 = document.getElementById("w2");
+    const b  = document.getElementById("b");
+
+    const w1v = document.getElementById("w1v");
+    const w2v = document.getElementById("w2v");
+    const bv  = document.getElementById("bv");
+
+    const zEl = document.getElementById("z");
+    const yEl = document.getElementById("yhat");
+    const eqEl = document.getElementById("equation");
+
+    const needle = document.getElementById("needle");
+    const ticks = document.getElementById("ticks");
+
+    const led0 = document.getElementById("led0");
+    const led1 = document.getElementById("led1");
+
+    // Build meter ticks (semi-circle from -90deg to +90deg)
+    (function buildTicks(){
+      const cx = 150, cy = 140, r1 = 108, r2 = 92;
+      const tickCount = 9; // -2 to +2 in 0.5 steps => 9 ticks
+      for (let i=0; i<tickCount; i++){
+        const t = i/(tickCount-1);      // 0..1
+        const ang = (-90 + 180*t) * Math.PI/180;
+        const xA = cx + r1 * Math.cos(ang);
+        const yA = cy + r1 * Math.sin(ang);
+        const xB = cx + r2 * Math.cos(ang);
+        const yB = cy + r2 * Math.sin(ang);
+
+        const ln = document.createElementNS("http://www.w3.org/2000/svg","line");
+        ln.setAttribute("x1", xA); ln.setAttribute("y1", yA);
+        ln.setAttribute("x2", xB); ln.setAttribute("y2", yB);
+        ln.setAttribute("opacity", (i===4) ? "0.95" : "0.55"); // center tick stronger
+        ln.setAttribute("stroke-width", (i===4) ? "3" : "2");
+        ticks.appendChild(ln);
+      }
+    })();
+
+    function syncSwitchUI(sw, checked){
+      sw.classList.toggle("on", checked);
+      sw.setAttribute("aria-checked", checked ? "true" : "false");
+    }
+
+    function update(){
+      const X1 = x1.checked ? 1 : 0;
+      const X2 = x2.checked ? 1 : 0;
+
+      const W1 = parseFloat(w1.value);
+      const W2 = parseFloat(w2.value);
+      const B  = parseFloat(b.value);
+
+      const z = (W1*X1) + (W2*X2) + B;
+      const y = step(z);
+
+      w1v.textContent = fmt(W1);
+      w2v.textContent = fmt(W2);
+      bv.textContent  = fmt(B);
+
+      zEl.textContent = fmt(z);
+      yEl.textContent = String(y);
+
+      eqEl.textContent = `z = (${fmt(W1)}·${X1}) + (${fmt(W2)}·${X2}) + (${fmt(B)}) = ${fmt(z)}`;
+
+      // LEDs
+      led0.classList.toggle("on", y === 0);
+      led1.classList.toggle("on", y === 1);
+
+      // Meter needle: map z in [-2,2] to angle [-90, +90]
+      const zc = clamp(z, -2, 2);
+      const angle = -90 + ((zc + 2) / 4) * 180;
+      needle.setAttribute("transform", `rotate(${angle} 150 140)`);
+    }
+
+    // Toggle switches click/keyboard support
+    function bindSwitch(sw, input){
+      sw.addEventListener("click", () => {
+        input.checked = !input.checked;
+        syncSwitchUI(sw, input.checked);
+        update();
+      });
+      sw.addEventListener("keydown", (e) => {
+        if (e.key === " " || e.key === "Enter"){
+          e.preventDefault();
+          input.checked = !input.checked;
+          syncSwitchUI(sw, input.checked);
+          update();
+        }
+      });
+      // Keep if user clicks the hidden checkbox (unlikely)
+      input.addEventListener("change", () => {
+        syncSwitchUI(sw, input.checked);
+        update();
+      });
+    }
+
+    bindSwitch(swX1, x1);
+    bindSwitch(swX2, x2);
+
+    // Sliders
+    [w1, w2, b].forEach(el => el.addEventListener("input", update));
+
+    // Initialize
+    syncSwitchUI(swX1, x1.checked);
+    syncSwitchUI(swX2, x2.checked);
+    update();
+  </script>
+</body>
+</html>
