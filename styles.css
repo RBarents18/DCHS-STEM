@@ -1217,3 +1217,52 @@ footer {
 .fade-in-up {
     animation: fadeInUp 0.6s ease-out forwards;
 }
+
+/* Student resource hub: retain the school palette with faster course access. */
+.brand-home { color: var(--deep-blue); text-decoration: none; min-width: 0; }
+.brand-name { display: block; font-family: var(--heading-font); font-size: 1.35rem; font-weight: 800; }
+.brand-home .logo-subtitle { display: block; font-size: .875rem; }
+.skip-link { position: fixed; top: -100px; left: 1rem; padding: .75rem 1rem; z-index: 1000; background: white; color: var(--deep-blue); }
+.skip-link:focus { top: 1rem; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--dark-gold); outline-offset: 4px; }
+.classroom-page .classroom-hero { min-height: 0; padding: 3rem 1.5rem; }
+.classroom-page .classroom-hero h1 { font-size: clamp(1.8rem, 4vw, 3rem); line-height: 1.2; }
+.classroom-page .classroom-hero p { font-size: 1.05rem; margin-bottom: 1rem; }
+.classroom-page section:not(.hero):not(#contact) { padding-top: 3rem; padding-bottom: 3rem; }
+.classroom-page #courses .section-header { margin-bottom: 1rem; }
+.classroom-page #courses .features { grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); }
+.classroom-page #courses .feature-card { padding: 1.5rem; }
+.classroom-page #courses .feature-icon { display: none; }
+.classroom-page #courses .feature-card h3 { font-size: 1.2rem; }
+.resource-note { max-width: 800px; margin: .75rem 0 1.5rem; }
+.student-tools, #student-resources { background: #f3f6fa; }
+.resource-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 1rem; }
+.resource-link { display: block; padding: 1.25rem; background: white; border: 1px solid #cad5e2; border-top: 4px solid var(--gold); border-radius: var(--radius-sm); color: var(--deep-blue); text-decoration: none; }
+.resource-link:hover { border-color: var(--primary-blue); box-shadow: var(--shadow-sm); }
+.resource-link strong { display: block; font-size: 1.1rem; text-decoration: underline; text-underline-offset: 3px; }
+.resource-link span { display: block; margin-top: .4rem; color: var(--text-gray); font-size: 1rem; }
+.course-guide { margin-top: 2rem; max-width: 900px; }
+.course-guide h3 { color: var(--deep-blue); margin: 1.5rem 0 .75rem; }
+.course-guide ol { padding-left: 1.5rem; }
+.course-guide li { padding-left: .4rem; margin-bottom: .9rem; }
+.course-switcher { max-width: var(--container-max); margin: 0 auto; padding: 2rem; display: flex; flex-wrap: wrap; gap: .75rem; justify-content: flex-start; }
+.course-switcher a { color: var(--deep-blue); border: 1px solid #cad5e2; border-radius: 4px; padding: .6rem .85rem; font-size: .9rem; }
+.course-switcher a[aria-current] { background: var(--deep-blue); color: white; }
+section[id], main[id] { scroll-margin-top: 110px; }
+@media (max-width: 768px) {
+ .brand-name { font-size: 1.1rem; }
+ .brand-home .logo-subtitle { font-size: .875rem; }
+ .classroom-page .classroom-hero { padding: 2rem 1rem; }
+ .classroom-page section:not(.hero) { padding-left: 1rem; padding-right: 1rem; }
+ .course-switcher { padding: 1rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+ html { scroll-behavior: auto; }
+ *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+.classroom-page .classroom-hero .hero-content { padding: .5rem; }
+.classroom-page .classroom-hero h1 { font-family: var(--heading-font); color: white; margin-bottom: 1rem; }
+.classroom-page .hero-tagline { color: var(--deep-blue); }
+.brand-home .logo-subtitle { color: #66501f; }
+.classroom-page .resource-grid, .classroom-page .course-guide { max-width: var(--container-max); margin-left: auto; margin-right: auto; }
