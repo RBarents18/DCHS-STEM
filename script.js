@@ -5,6 +5,7 @@ const navLinks = document.querySelector('.nav-links');
 if (mobileMenuToggle) {
     mobileMenuToggle.addEventListener('click', () => {
         navLinks.classList.toggle('active');
+        mobileMenuToggle.setAttribute('aria-expanded', String(navLinks.classList.contains('active')));
         mobileMenuToggle.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
     });
 }
@@ -33,10 +34,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 navLinks.classList.remove('active');
                 if (mobileMenuToggle) {
                     mobileMenuToggle.textContent = '☰';
+                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
                 }
                 
                 target.scrollIntoView({
-                    behavior: 'smooth',
+                    behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
                     block: 'start'
                 });
             }
@@ -91,7 +93,7 @@ document.querySelectorAll('.cta-button').forEach(button => {
             e.preventDefault();
             const target = document.querySelector(href);
             if (target) {
-                target.scrollIntoView({ behavior: 'smooth' });
+                target.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
             }
         }
     });
@@ -174,3 +176,13 @@ document.querySelectorAll('.feature-card, .project-card, .event-card, .stat-item
 });
 
 console.log('Desert Christian STEM Program Website loaded successfully! 🏜️✝️🔬');
+
+// Allow keyboard users to dismiss the mobile navigation.
+document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && navLinks?.classList.contains('active')) {
+        navLinks.classList.remove('active');
+        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        mobileMenuToggle.textContent = '☰';
+        mobileMenuToggle.focus();
+    }
+});

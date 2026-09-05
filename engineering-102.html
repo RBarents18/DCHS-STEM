@@ -6,33 +6,17 @@
     <title>Engineering 102 - Dual Enrollment | Desert Christian STEM</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <header>
-        <nav>
-            <div class="logo">
-                <h1>Desert Christian STEM</h1>
-            </div>
-            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">☰</button>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#projects">Projects</a></li>
-                <li><a href="#" class="active">Engineering 102</a></li>
-                <li><a href="principles-of-ai.html">Principles of AI</a></li>
-                <li><a href="index.html#events">Events</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<body class="classroom-page"><a class="skip-link" href="#main-content">Skip to content</a>
+    <header><nav aria-label="Main navigation"><a class="brand-home" href="index.html"><span class="brand-name">Desert Christian STEM</span><span class="logo-subtitle">Mr. Barents · Learn. Create. Serve.</span></a><button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-navigation">☰</button><ul class="nav-links" id="main-navigation"><li><a href="index.html">Home</a></li><li><a href="index.html#courses">Courses</a></li><li><a href="index.html#student-resources">Student resources</a></li><li><a href="index.html#contact">School information</a></li></ul></nav></header>
 
-    <main>
-        <section class="hero">
+    <main id="main-content">
+        <section class="hero classroom-hero">
             <div class="hero-content">
-                <h2>Engineering 102</h2>
+                <h1>Engineering 102</h1>
                 <p>University of Arizona Dual Enrollment Program</p>
                 <p class="verse">"Whatever you do, work at it with all your heart, as working for the Lord, not for human masters." - Colossians 3:23</p>
             </div>
-        </section>
+        </section><section class="student-tools" id="student-resources"><span class="section-tag">Student workspace</span><h2>Tools &amp; resources</h2><p class="resource-note">Use your course account for assignments and due dates. These links open the general tools; they do not enroll you in a class.</p><div class="resource-grid"><a class="resource-link" href="https://cad.onshape.com/"><strong>Onshape</strong><span>Open CAD documents and continue your design work.</span></a><a class="resource-link" href="https://docs.arduino.cc/"><strong>Arduino documentation</strong><span>Find official programming and board references.</span></a><a class="resource-link" href="https://engineering.arizona.edu/k12/k12_102_HS"><strong>UA Engineering 102 HS</strong><span>Review the university program information.</span></a></div><div class="course-guide"><h3>Keep an engineering notebook</h3><ol><li><strong>Define the problem</strong><p>Identify the need, measurable success criteria, and constraints before choosing a solution.</p></li><li><strong>Document the evidence</strong><p>Save labeled sketches, calculations with units, design versions, test conditions, and raw data.</p></li><li><strong>Justify the redesign</strong><p>Compare results with your criteria. Explain what you changed, why, and what you will test next.</p></li></ol><h3>Before a project presentation</h3><p>Show the problem, your design decisions, test results, and the evidence behind your conclusions. Credit sources and contributions, describe limitations, and explain how your design could improve.</p></div></section>
 
         <section id="overview">
             <h2>Program Overview</h2>
@@ -121,8 +105,8 @@
             <h2>University of Arizona Partnership</h2>
             <div class="contact-content" style="color: var(--text-gray);">
                 <p>This program is offered in partnership with the University of Arizona College of Engineering's K-12 Outreach program.</p>
-                <p class="contact-info">🔗 <a href="https://engineering.arizona.edu/k12/k12_102_HS" target="_blank">Learn more at UA Engineering K-12 Program</a></p>
-                <a href="https://engineering.arizona.edu/k12/k12_102_HS" target="_blank" class="cta-button">Visit UA Engineering 102 Page</a>
+                <p class="contact-info">🔗 <a href="https://engineering.arizona.edu/k12/k12_102_HS" target="_blank" rel="noopener noreferrer">Learn more at UA Engineering K-12 Program</a></p>
+                <a href="https://engineering.arizona.edu/k12/k12_102_HS" target="_blank" rel="noopener noreferrer" class="cta-button">Visit UA Engineering 102 Page</a>
             </div>
         </section>
 
@@ -130,12 +114,12 @@
             <h2>Get Started</h2>
             <div class="contact-content">
                 <p>Interested in enrolling in Engineering 102? Contact us to learn more about this dual enrollment opportunity!</p>
-                <p class="contact-info">📧 Email: stem@desertchristian.org</p>
-                <p class="contact-info">📍 Visit: <a href="https://www.desertchristian.org/" target="_blank">Desert Christian Schools</a></p>
+                <p class="contact-info">Ask Mr. Barents about course enrollment and project requirements.</p>
+                <p class="contact-info">📍 Visit: <a href="https://www.desertchristian.org/" target="_blank" rel="noopener noreferrer">Desert Christian Schools</a></p>
                 <a href="index.html" class="cta-button secondary">Back to Home</a>
             </div>
         </section>
-    </main>
+    <nav class="course-switcher" aria-label="Other courses"><a href="ap-calculus-ab.html">AP Calculus AB</a><a href="ap-csp.html">AP CSP</a><a href="engineering-102.html" aria-current="page">Engineering 102 HS</a><a href="automotive.html">Automotive</a><a href="intelligent-design.html">Intelligent Design</a></nav></main>
 
     <footer>
         <div class="footer-main">
@@ -155,14 +139,14 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="index.html#about">About</a></li>
                         <li><a href="index.html#projects">Projects</a></li>
-                        <li><a href="index.html#events">Events</a></li>
+                        <li><a href="index.html#student-resources">Student resources</a></li>
                     </ul>
                 </div>
                 <div class="footer-links-section">
                     <h4>Programs</h4>
                     <ul>
                         <li><a href="engineering-102.html">Engineering 102</a></li>
-                        <li><a href="principles-of-ai.html">Principles of AI</a></li>
+                        <li><a href="index.html#courses">All courses</a></li>
                         <li><a href="index.html#about">STEM Disciplines</a></li>
                         <li><a href="index.html#projects">Student Projects</a></li>
                     </ul>
@@ -170,8 +154,8 @@
                 <div class="footer-links-section">
                     <h4>Resources</h4>
                     <ul>
-                        <li><a href="https://www.desertchristian.org/" target="_blank">Desert Christian Schools</a></li>
-                        <li><a href="https://engineering.arizona.edu/k12/k12_102_HS" target="_blank">UA Engineering K-12</a></li>
+                        <li><a href="https://www.desertchristian.org/" target="_blank" rel="noopener noreferrer">Desert Christian Schools</a></li>
+                        <li><a href="https://engineering.arizona.edu/k12/k12_102_HS" target="_blank" rel="noopener noreferrer">UA Engineering K-12</a></li>
                         <li><a href="index.html#contact">Contact Us</a></li>
                     </ul>
                 </div>

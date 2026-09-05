@@ -6,75 +6,22 @@
     <title>Desert Christian STEM Program</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <header>
-        <nav>
-            <div class="logo">
-                <div class="logo-text">
-                    <h1>Desert Christian STEM</h1>
-                    <span class="logo-subtitle">Discipling Students to Make a Difference in Their World</span>
-                </div>
-            </div>
-            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">☰</button>
-            <ul class="nav-links">
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#courses">Courses</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="engineering-102.html">Engineering 102</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<body class="classroom-page"><a class="skip-link" href="#main-content">Skip to content</a>
+    <header><nav aria-label="Main navigation"><a class="brand-home" href="index.html"><span class="brand-name">Desert Christian STEM</span><span class="logo-subtitle">Mr. Barents · Learn. Create. Serve.</span></a><button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-navigation">☰</button><ul class="nav-links" id="main-navigation"><li><a href="index.html">Home</a></li><li><a href="index.html#courses">Courses</a></li><li><a href="index.html#student-resources">Student resources</a></li><li><a href="index.html#contact">School information</a></li></ul></nav></header>
 
-    <main>
-        <section class="hero">
+    <main id="main-content">
+        <section class="hero classroom-hero">
             <div class="hero-overlay"></div>
             <div class="hero-content">
                 <span class="hero-tagline">Faith &bull; Innovation &bull; Excellence</span>
-                <h2>Desert Christian STEM Program</h2>
+                <h1>Your STEM classroom hub</h1>
                 <p>Hands-on, Christ-centered learning in mathematics, computer science, engineering, automotive technology, and design.</p>
                 <div class="hero-actions">
-                    <a href="#courses" class="cta-button primary">Explore Our Courses</a>
-                    <a href="https://www.desertchristian.org/" target="_blank" class="cta-button outline">Desert Christian Schools</a>
+                    <a href="#courses" class="cta-button primary">Find Your Course</a>
+                    <a href="https://www.desertchristian.org/" target="_blank" rel="noopener noreferrer" class="cta-button outline">Desert Christian Schools</a>
                 </div>
             </div>
         </section>
-
-        <section class="school-stats">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <span class="stat-number">5</span>
-                    <span class="stat-label">Courses This Semester</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">3</span>
-                    <span class="stat-label">College Credits Available</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">100%</span>
-                    <span class="stat-label">Hands-On Learning</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">1</span>
-                    <span class="stat-label">University Partnership</span>
-                </div>
-            </div>
-        </section>
-
-        <section id="about">
-            <div class="section-header">
-                <span class="section-tag">About Our Program</span>
-                <h2>Learning with Purpose</h2>
-                <div class="section-underline"></div>
-            </div>
-            <p class="section-intro">The Desert Christian STEM Program equips students to think critically, solve meaningful problems, and use technology with wisdom. Across every course, students are challenged to pursue excellence, work collaboratively, and apply their God-given abilities in service to others.</p>
-            <div class="verse-highlight">
-                <p>"For we are God's handiwork, created in Christ Jesus to do good works, which God prepared in advance for us to do."</p>
-                <span class="verse-ref">— Ephesians 2:10</span>
-            </div>
-        </section>
-
         <section id="courses">
             <div class="section-header">
                 <span class="section-tag">Fall 2026</span>
@@ -115,6 +62,22 @@
                 </div>
             </div>
         </section>
+
+        <section id="student-resources"><span class="section-tag">Quick access</span><h2>Student resources</h2><p class="resource-note">Open your course above for subject-specific tools and project guidance. Check your assigned classroom platform for current work, deadlines, and teacher feedback.</p><div class="resource-grid"><a class="resource-link" href="https://classroom.google.com/"><strong>Google Classroom</strong><span>Open your existing classes and posted assignments.</span></a><a class="resource-link" href="https://myap.collegeboard.org/"><strong>AP Classroom</strong><span>Open your AP courses and assigned practice.</span></a><a class="resource-link" href="https://www.deltamath.com/"><strong>DeltaMath</strong><span>Sign in to work on assigned math practice.</span></a></div></section>
+<section id="about">
+            <div class="section-header">
+                <span class="section-tag">About Our Program</span>
+                <h2>Learning with Purpose</h2>
+                <div class="section-underline"></div>
+            </div>
+            <p class="section-intro">The Desert Christian STEM Program equips students to think critically, solve meaningful problems, and use technology with wisdom. Across every course, students are challenged to pursue excellence, work collaboratively, and apply their God-given abilities in service to others.</p>
+            <div class="verse-highlight">
+                <p>"For we are God's handiwork, created in Christ Jesus to do good works, which God prepared in advance for us to do."</p>
+                <span class="verse-ref">— Ephesians 2:10</span>
+            </div>
+        </section>
+
+
 
         <section id="projects">
             <div class="section-header">
@@ -171,14 +134,14 @@
                         <span class="contact-icon">🎓</span>
                         <div>
                             <strong>Desert Christian Schools</strong>
-                            <p><a href="https://www.desertchristian.org/" target="_blank" style="color: rgba(255,255,255,0.9); text-decoration: underline;">Visit the DCS website</a></p>
+                            <p><a href="https://www.desertchristian.org/" target="_blank" rel="noopener noreferrer" style="color: rgba(255,255,255,0.9); text-decoration: underline;">Visit the DCS website</a></p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <span class="contact-icon">🔗</span>
                         <div>
                             <strong>University Partner</strong>
-                            <p><a href="https://engineering.arizona.edu/k12/k12_102_HS" target="_blank" style="color: rgba(255,255,255,0.9); text-decoration: underline;">UA Engineering K-12 Program</a></p>
+                            <p><a href="https://engineering.arizona.edu/k12/k12_102_HS" target="_blank" rel="noopener noreferrer" style="color: rgba(255,255,255,0.9); text-decoration: underline;">UA Engineering K-12 Program</a></p>
                         </div>
                     </div>
                 </div>
@@ -186,7 +149,7 @@
                     <h3>Program Focus</h3>
                     <p>Our STEM courses reflect the broader mission of Desert Christian Schools: discipling students to make a difference in their world. Students learn to approach mathematics, technology, engineering, and skilled trades with curiosity, excellence, integrity, and a desire to serve.</p>
                     <div style="margin-top: 2rem;">
-                        <a href="https://www.desertchristian.org/academics/high-school-9th-12th" target="_blank" class="cta-button primary">Explore DCS High School</a>
+                        <a href="https://www.desertchristian.org/academics/high-school" target="_blank" rel="noopener noreferrer" class="cta-button primary">Explore DCS High School</a>
                     </div>
                 </div>
             </div>
@@ -227,8 +190,8 @@
                 <div class="footer-links-section">
                     <h4>Resources</h4>
                     <ul>
-                        <li><a href="https://www.desertchristian.org/" target="_blank">Desert Christian Schools</a></li>
-                        <li><a href="https://engineering.arizona.edu/k12/k12_102_HS" target="_blank">UA Engineering K-12</a></li>
+                        <li><a href="https://www.desertchristian.org/" target="_blank" rel="noopener noreferrer">Desert Christian Schools</a></li>
+                        <li><a href="https://engineering.arizona.edu/k12/k12_102_HS" target="_blank" rel="noopener noreferrer">UA Engineering K-12</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
