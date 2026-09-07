@@ -1,0 +1,163 @@
+/* Course discovery and reference pages. Legacy pages keep styles.css unchanged. */
+.showcase-page { color: #344454; background: #fff; font-size: 1rem; }
+.showcase-page .page-width { width: min(1200px, calc(100% - 4rem)); margin-inline: auto; }
+.showcase-page h1, .showcase-page h2, .showcase-page h3 { font-family: var(--heading-font); color: #003366; letter-spacing: -.025em; }
+.showcase-page h1 { font-size: clamp(2.5rem, 5.2vw, 4.6rem); line-height: 1.08; font-weight: 800; }
+.showcase-page h2 { font-size: clamp(1.85rem, 3.2vw, 2.65rem); line-height: 1.18; margin: 0 0 1.2rem; }
+.showcase-page h3 { font-size: 1.35rem; line-height: 1.3; margin-bottom: .8rem; }
+.showcase-page p { margin-bottom: 1rem; }
+.showcase-page a { text-underline-offset: .2em; }
+.showcase-page img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.showcase-page :focus-visible { outline: 3px solid #996f17; outline-offset: 5px; }
+.showcase-page .eyebrow { color: #66501f; text-transform: uppercase; letter-spacing: .11em; font-size: .875rem; line-height: 1.5; font-weight: 750; margin-bottom: 1rem; }
+.showcase-page .lead { font-size: 1.18rem; line-height: 1.75; max-width: 720px; }
+.showcase-page section { padding: 0; }
+.showcase-page .content-section { padding: 4.5rem 0; }
+.showcase-page header nav { min-height: 88px; }
+.showcase-page .brand-name { font-size: 1.2rem; }
+.showcase-page .brand-home .logo-subtitle { font-size: .875rem; letter-spacing: .035em; }
+.showcase-page .nav-links { gap: .4rem; }
+.showcase-page .nav-links > li > a { font-size: .9rem; padding: .65rem .8rem; }
+.showcase-page .nav-links > li:last-child > a { border: 1px solid #c8d2dc; border-radius: 4px; }
+.showcase-page .button-row { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.8rem; }
+.showcase-page .button { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: .8rem 1.25rem; border: 1px solid transparent; border-radius: 4px; font-size: 1rem; font-weight: 700; text-decoration: none; line-height: 1.5; text-align: center; }
+.showcase-page .button-gold { background: #d4a84b; color: #142d46; }
+.showcase-page .button-outline { border-color: #829bb4; color: #fff; }
+.showcase-page .button-blue { background: #003366; color: #fff; }
+.showcase-page .button:hover { filter: brightness(.92); }
+.showcase-page .landing-hero { background: #072e54; color: #edf3fa; padding: 3.7rem 0; }
+.showcase-page .hero-layout { display: grid; grid-template-columns: 1.08fr 1fr; align-items: center; gap: 3rem; }
+.showcase-page .landing-hero h1 { color: white; margin-bottom: 1.5rem; }
+.showcase-page .landing-hero h1 em { color: #e1b75f; font-style: normal; }
+.showcase-page .landing-hero .eyebrow, .showcase-page .course-intro .eyebrow { color: #e1b75f; }
+.showcase-page .hero-signature { margin: 2.2rem 0 0; font-weight: 700; color: #fff; }
+.showcase-page .hero-signature span { display: block; font-size: .9rem; font-weight: 400; color: #b9ccdf; }
+.showcase-page .hero-photo { position: relative; height: 480px; margin: 0; border-radius: 4px; overflow: hidden; }
+.showcase-page .hero-photo figcaption { position: absolute; bottom: 0; width: 100%; padding: 3rem 1.7rem 1.5rem; background: linear-gradient(transparent,rgba(0,22,44,.95)); font-size: 1.2rem; color: white; font-weight: 700; }
+.showcase-page .hero-photo figcaption span, .showcase-page .hero-photo figcaption small { display: block; font-size: .875rem; font-weight: 400; }
+.showcase-page .hero-photo figcaption span { color: #f1ca7a; letter-spacing: .1em; margin-bottom: .4rem; }
+.showcase-page .hero-photo figcaption small { margin-top: .5rem; }
+.showcase-page .section-heading { display: flex; justify-content: space-between; align-items: end; gap: 2rem; margin-bottom: 2rem; }
+.showcase-page .section-heading > p { max-width: 360px; }
+.showcase-page .section-heading h2 { margin-bottom: .2rem; }
+.showcase-page .course-gallery { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1.5rem; }
+.showcase-page .explore-card { grid-column: span 2; border: 1px solid #d9e0e7; border-radius: 5px; overflow: hidden; display: flex; flex-direction: column; }
+.showcase-page .explore-card:nth-last-child(-n+2) { grid-column: span 3; }
+.showcase-page .card-image { display: block; height: 220px; background: #edf2f7; }
+.showcase-page .card-copy { padding: 1.6rem; display: flex; flex-direction: column; flex: 1; }
+.showcase-page .card-copy h3 a { color: #003366; text-decoration: none; }
+.showcase-page .card-copy h3 a:hover { text-decoration: underline; }
+.showcase-page .card-copy .eyebrow { font-size: .875rem; letter-spacing: .04em; }
+.showcase-page .card-copy > p:not(.eyebrow):not(.card-project) { flex: 1; }
+.showcase-page .card-project { border-top: 1px solid #e1e6eb; padding-top: 1rem; color: #003366; font-weight: 650; }
+.showcase-page .card-project span { display: block; color: #627182; font-size: .875rem; font-weight: 400; }
+.showcase-page .text-link { color: #003366; font-weight: 700; }
+.showcase-page .text-link span { display: inline-block; margin-left: .3rem; }
+.showcase-page .photo-note { color: #596b7c; font-size: .875rem; line-height: 1.6; }
+.showcase-page .gallery-note { margin: 1.2rem 0 0; }
+.showcase-page .photo-note a { color: #244f75; }
+.showcase-page #projects.purpose-band { background: #edf3f8; border-block: 1px solid #dbe5ef; }
+.showcase-page .purpose-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+.showcase-page #student-resources { background: #fff; }
+.showcase-page .section-copy { max-width: 780px; }
+.showcase-page .reference-course-links { display: grid; grid-template-columns: repeat(3,1fr); gap: .8rem; margin: 1.8rem 0; }
+.showcase-page .reference-course-links a { display: flex; justify-content: space-between; align-items: center; gap: .8rem; border: 1px solid #cbd6e1; border-radius: 4px; padding: 1rem; color: #003366; font-weight: 650; }
+.showcase-page .classroom-callout { display: flex; align-items: center; justify-content: space-between; gap: 2rem; padding: 1.7rem; margin: 2rem 0; border-left: 4px solid #d4a84b; background: #f2f5f8; }
+.showcase-page .classroom-callout div { max-width: 730px; }
+.showcase-page .classroom-callout p { margin: 0; }
+.showcase-page .classroom-callout .button { flex-shrink: 0; }
+.showcase-page .platform-links { color: #596b7c; font-size: .95rem; }
+.showcase-page .platform-links a { color: #003366; }
+.showcase-page .platform-links span { padding-inline: .8rem; }
+.showcase-page .faith-section { padding: 3.5rem 0; text-align: center; background: #f7f5ef; }
+.showcase-page .faith-section .page-width { max-width: 860px; }
+.showcase-page blockquote { margin: 1.5rem 0 0; font-size: 1.2rem; color: #003366; }
+.showcase-page blockquote p { margin-bottom: .6rem; }
+.showcase-page .verse-ref { font-size: .95rem; color: #66501f; }
+.showcase-page #contact.school-section { background: #fff; color: #344454; text-align: left; }
+.showcase-page .school-section p { color: #344454; }
+.showcase-page .school-details { padding-left: 2rem; border-left: 1px solid #d4a84b; }
+.showcase-page .showcase-footer { background: #072e54; padding: 2.5rem 0; color: #d8e4ef; }
+.showcase-page .footer-layout { display: flex; justify-content: space-between; gap: 3rem; }
+.showcase-page .footer-brand { font-size: 1.2rem; font-weight: 750; color: #fff; text-decoration: none; }
+.showcase-page .footer-layout p { margin: .6rem 0 0; max-width: 460px; }
+.showcase-page .fine-print { font-size: .875rem; }
+.showcase-page .footer-destinations { display: grid; grid-template-columns: 1fr 1fr; gap: .65rem 1.5rem; }
+.showcase-page .footer-destinations a { color: #edf3fa; font-size: .9rem; }
+.showcase-page .course-intro { background: #072e54; color: #edf3fa; padding: 2.5rem 0 3.5rem; }
+.showcase-page .course-intro h1 { color: #fff; font-size: clamp(2.3rem, 4.2vw, 3.6rem); max-width: 900px; margin-bottom: 1.3rem; }
+.showcase-page .breadcrumb { display: inline-block; color: #c4d6e7; margin-bottom: 2rem; font-size: .9rem; }
+.showcase-page .section-nav { padding: 1rem 0; display: flex; flex-wrap: wrap; justify-content: flex-start; gap: .5rem 2rem; border-bottom: 1px solid #d9e0e7; }
+.showcase-page .section-nav a { color: #003366; padding: .5rem 0; font-weight: 650; }
+.showcase-page .fit-layout { display: grid; grid-template-columns: 1.5fr 1fr; gap: 4rem; }
+.showcase-page .skills-panel { padding: 1.7rem 2rem; background: #f1f5f9; border-top: 3px solid #d4a84b; }
+.showcase-page .skills-panel ul { padding-left: 1.25rem; }
+.showcase-page .skills-panel li { margin: .5rem 0; }
+.showcase-page .eligibility { padding-top: .8rem; font-size: .95rem; }
+.showcase-page .eligibility a { color: #003366; }
+.showcase-page #projects.project-section { background: #f1f5f9; }
+.showcase-page .featured-project { display: grid; grid-template-columns: 1.25fr 1fr; background: white; border: 1px solid #d9e0e7; border-radius: 5px; overflow: hidden; }
+.showcase-page .featured-project figure { margin: 0; min-height: 340px; }
+.showcase-page .featured-project-copy { padding: 2.5rem; align-self: center; }
+.showcase-page .featured-project h3 { font-size: 1.9rem; }
+.showcase-page .project-number { display: block; font-size: .875rem; letter-spacing: .08em; color: #66501f; font-weight: 700; margin-bottom: 1rem; }
+.showcase-page .project-takeaway { margin: 1.4rem 0 0; padding-top: 1rem; border-top: 1px solid #e3e8ed; color: #003366; font-weight: 650; }
+.showcase-page .project-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1.5rem; }
+.showcase-page .project-summary { padding: 1.8rem; border: 1px solid #d9e0e7; background: #fff; border-radius: 5px; }
+.showcase-page .project-summary p { margin: 0; }
+.showcase-page .resource-heading { margin-top: 2.5rem; }
+.showcase-page .resource-link strong { font-size: 1.1rem; }
+.showcase-page .reference-details { border: 1px solid #cbd6e1; border-radius: 4px; margin-top: 2rem; padding: 1.5rem; }
+.showcase-page .reference-details summary { cursor: pointer; color: #003366; font-size: 1.2rem; font-weight: 750; }
+.showcase-page .course-guide { max-width: 900px; margin: 1rem 0 0; }
+.showcase-page .course-switcher { padding: 2rem 0; }
+.showcase-page .credits-list { list-style: none; margin: 2rem 0; }
+.showcase-page .credits-list li { padding: 1.25rem 0; border-bottom: 1px solid #d9e0e7; }
+.showcase-page .credits-list h2 { font-size: 1.3rem; margin-bottom: .5rem; }
+.showcase-page .credits-list a { color: #003366; }
+@media (max-width: 1000px) {
+ .showcase-page .hero-layout { gap: 2rem; }
+ .showcase-page .hero-photo { height: 440px; }
+ .showcase-page .course-gallery { grid-template-columns: repeat(2,1fr); }
+ .showcase-page .explore-card, .showcase-page .explore-card:nth-last-child(-n+2) { grid-column: auto; }
+ .showcase-page .classroom-callout { align-items: flex-start; flex-direction: column; gap: 1rem; }
+ .showcase-page .fit-layout { gap: 2rem; }
+ .showcase-page header nav { flex-wrap: wrap; }
+}
+@media (max-width: 768px) {
+ .showcase-page .page-width { width: calc(100% - 2rem); }
+ .showcase-page header nav { min-height: 80px; padding: .9rem 1rem; }
+ .showcase-page .brand-name { font-size: 1.05rem; }
+ .showcase-page .brand-home .logo-subtitle { font-size: .875rem; letter-spacing: 0; }
+ .showcase-page .nav-links { gap: .2rem; }
+ .showcase-page .landing-hero { padding: 2.5rem 0; }
+ .showcase-page .hero-layout, .showcase-page .purpose-layout, .showcase-page .fit-layout, .showcase-page .featured-project { grid-template-columns: 1fr; }
+ .showcase-page .hero-photo { height: 340px; }
+ .showcase-page .content-section { padding: 3rem 0; }
+ .showcase-page .section-heading { flex-direction: column; align-items: flex-start; gap: .7rem; }
+ .showcase-page .section-heading > p { max-width: none; margin-bottom: 0; }
+ .showcase-page .reference-course-links { grid-template-columns: 1fr 1fr; }
+ .showcase-page .purpose-layout { gap: 1.5rem; }
+ .showcase-page .featured-project figure { height: 300px; min-height: 0; }
+ .showcase-page .featured-project-copy { padding: 1.5rem; }
+ .showcase-page .school-details { padding-left: 1.3rem; }
+ .showcase-page .footer-layout { flex-direction: column; gap: 1.5rem; }
+}
+@media (max-width: 520px) {
+ .showcase-page .course-gallery, .showcase-page .reference-course-links, .showcase-page .project-pair { grid-template-columns: 1fr; }
+ .showcase-page .hero-photo { height: 300px; }
+ .showcase-page .card-image { height: 240px; }
+ .showcase-page .button-row .button { flex: 1 1 auto; }
+ .showcase-page .classroom-callout { padding: 1.25rem; }
+ .showcase-page .classroom-callout .button { width: 100%; }
+ .showcase-page .section-nav { gap: .25rem 1rem; }
+ .showcase-page .section-nav a { font-size: .9rem; }
+ .showcase-page .footer-destinations { grid-template-columns: 1fr; }
+}
+@media print {
+ .showcase-page header, .showcase-page .showcase-footer, .showcase-page .section-nav, .showcase-page .course-switcher, .showcase-page .button-row { display: none; }
+ .showcase-page .page-width { width: 100%; }
+ .showcase-page .content-section, .showcase-page .course-intro, .showcase-page .faith-section { padding: 1rem 0; background: white; color: black; }
+ .showcase-page .course-intro h1 { color: black; }
+ .showcase-page .featured-project, .showcase-page .project-pair { break-inside: avoid; }
+}

@@ -41,6 +41,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                     behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
                     block: 'start'
                 });
+                if (this.classList.contains('skip-link')) {
+                    target.focus({ preventScroll: true });
+                }
             }
         }
     });
@@ -63,7 +66,10 @@ window.addEventListener('scroll', () => {
     navLinksAll.forEach(link => {
         link.classList.remove('active');
         const href = link.getAttribute('href');
-        if (href && href.slice(1) === current) {
+        const destination = href ? new URL(href, window.location.href) : null;
+        const pagePath = window.location.pathname.replace(/\/$/, '/index.html');
+        const destinationPath = destination?.pathname.replace(/\/$/, '/index.html');
+        if (destination && destinationPath === pagePath && destination.hash === `#${current}`) {
             link.classList.add('active');
         }
     });
