@@ -1,0 +1,57 @@
+[
+  {
+    "file": "calculus.jpg",
+    "course": "Calculus",
+    "alt": "Empty roller coaster cars follow a curved blue track under a clear sky.",
+    "caption": "Curves, motion, and the mathematics of change.",
+    "author": "Min An",
+    "source": "https://www.pexels.com/photo/red-and-white-roller-coaster-on-railings-749061/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "notes": "Generic curriculum illustration; no people visible; not a DCHS facility or student photo. Free website reuse; attribution optional but encouraged."
+  },
+  {
+    "file": "computing.jpg",
+    "course": "AP Computer Science Principles",
+    "alt": "Laptop displaying a code editor and an application preview.",
+    "caption": "Ideas become working programs.",
+    "author": "Rodrigo Santos",
+    "source": "https://www.pexels.com/photo/workplace-with-modern-laptop-with-program-code-on-screen-3888151/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "notes": "Generic curriculum illustration; no people visible; not a DCHS facility or student photo. Free website reuse; attribution optional but encouraged."
+  },
+  {
+    "file": "automotive.jpg",
+    "course": "Automotive",
+    "alt": "A disassembled car engine mounted on a stand in an auto workshop.",
+    "caption": "Explore the systems that keep vehicles moving.",
+    "author": "Artem Podrez",
+    "source": "https://www.pexels.com/photo/a-car-engine-at-an-auto-repair-shop-8985968/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "notes": "Generic curriculum illustration; no people visible; not a DCHS facility or student photo. Free website reuse; attribution optional but encouraged."
+  },
+  {
+    "file": "engineering.jpg",
+    "course": "Engineering",
+    "alt": "An Arduino Uno circuit board on a green cutting mat.",
+    "caption": "Connect circuits, code, and creative problem solving.",
+    "author": "Harrison Broadbent",
+    "source": "https://unsplash.com/photos/blue-circuit-board-__LXdDYiL-w",
+    "license": "Unsplash License",
+    "license_url": "https://unsplash.com/license",
+    "notes": "Generic curriculum illustration; no people visible; not a DCHS facility or student photo. Free website reuse; attribution optional but encouraged."
+  },
+  {
+    "file": "design.jpg",
+    "course": "Intelligent Design",
+    "alt": "A 3D printer builds an orange component under colorful workshop lighting.",
+    "caption": "Take a design from concept to prototype.",
+    "author": "Jakub Zerdzicki",
+    "source": "https://www.pexels.com/photo/3d-printing-18296466/",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "notes": "Generic curriculum illustration; no people visible; not a DCHS facility or student photo. Free website reuse; attribution optional but encouraged."
+  }
+]
